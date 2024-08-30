@@ -6,17 +6,52 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
-    <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-6"></div>
-    <h1 class="text-2xl font-bold text-center mb-6">Weather Forecast</h1>
+<body class="bg-blue-100 min-h-screen flex flex-col">
+    
+    <div class="grid grid-rows-[auto_1fr_auto] lg:grid-rows-[auto_1fr_auto] lg:grid-cols-3 gap-4 w-full h-full">
+    
+        <header class="lg:col-span-3 w-full">
+            <h1 class="text-3xl font-bold text-center text-white bg-blue-500 p-4 w-full">Weather Forecast</h1>
+        </header>
 
-    <div class="mb-4">
-        <input id="city-input" type="text" placeholder="Enter city name" class="w-full p-2 border border-gray-300 rounded-md">
-        <button id="search-button" class="w-full bg-blue-500 text-white p-2 rounded-md mt-2">Search</button>
-    </div>
+       
+        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between space-y-4 lg:col-span-1 lg:col-start-1 lg:self-start">
+            
+            <div>
+                <h1 class="font-bold p-2 mb-2">Enter a City Name</h1>
+                <input id="city-input" type="text" placeholder="Enter city name" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                <button id="search-button" class="w-full bg-blue-500 text-white p-2 rounded-md mt-2 hover:bg-blue-600">Search</button>
+            </div>
 
-    <div class="mb-4">
-        <button id="location-button" class="w-full bg-green-500 text-white p-2 rounded-md">Use Current Location</button>
+            <div>
+                <button id="location-button" class="w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-600">Use Current Location</button>
+            </div>
+
+            <div id="recent-cities-container" class="hidden">
+                <select id="recent-cities" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                    <!-- Options will be added here -->
+                </select>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 lg:col-span-2 lg:col-start-2 lg:self-start ">
+            <h1 class="font-bold p-2 mb-2 ">Today's Weather</h1>
+            <div id="weather-data" class="text-center">
+                <!-- This section will be added with JavaScript -->
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 lg:col-span-3">
+            <h1 class="font-bold p-2 mb-2">5 Day Forecast</h1>
+            <div id="extended-forecast" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                <!-- This section will be added with JavaScript -->
+            </div>
+        </div>
+
+        <footer class="lg:col-span-3 w-full">
+            <h2 class="text-1xl font-bold text-center text-white bg-blue-500 p-4 w-full">© 2024. By Yoraver Singh Virk.</h2>
+        </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
